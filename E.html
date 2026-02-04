@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E. 売れてる時の投稿系テンプレート | コンテンツ販売攻略</title>
+    
+    <!-- Fonts: Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons: FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Framework: Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Config & Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1e3a8a',   // Deep Indigo
+                        accent: '#f59e0b',    // Amber
+                        surface: '#f8fafc',   // Slate 50
+                        paper: '#ffffff',
+                        text: '#334155',      // Slate 700
+                    },
+                    boxShadow: {
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                        'card-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* ブロガー風マーカー装飾 */
+        .marker-yellow {
+            background: linear-gradient(transparent 60%, #fef08a 60%);
+            font-weight: 700;
+            padding: 0 4px;
+        }
+        
+        /* スマホのようなプレビュー枠 */
+        .preview-box {
+            background-color: #f3f4f6;
+            border-left: 4px solid #1e3a8a;
+            padding: 1.5rem;
+            padding-top: 2.5rem; /* コピーボタン用の余白を追加 */
+            border-radius: 0 0.5rem 0.5rem 0;
+            font-family: sans-serif;
+            white-space: pre-wrap; /* 改行を維持 */
+            line-height: 1.8;
+            color: #1f2937;
+            position: relative;
+        }
+        .preview-box::before {
+            content: 'POST TEMPLATE';
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            background: #1e3a8a;
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-weight: bold;
+            z-index: 20;
+        }
+
+        /* アニメーション */
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 遅延表示の設定 */
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body class="bg-surface text-text font-sans antialiased selection:bg-primary selection:text-white">
+
+    <!-- Header Section -->
+    <header class="bg-primary text-white pt-20 pb-24 relative overflow-hidden">
+        <!-- Decoration circles -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 translate-x-1/3 translate-y-1/3"></div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center max-w-4xl">
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-800 text-blue-200 text-sm font-semibold mb-4 border border-blue-700">
+                Phase: High Demand / Viral Response
+            </span>
+            <h1 class="text-3xl md:text-5xl font-black leading-tight mb-6">
+                E. 売れてる時の投稿系<br>
+                <span class="text-blue-200 text-2xl md:text-3xl font-bold mt-2 block">（販売中・反応が良い時に随時）</span>
+            </h1>
+            <p class="text-blue-100 text-lg md:text-xl font-medium">
+                想定以上に売れてる時の<span class="text-white border-b-2 border-accent">「盛り上がり」</span>を可視化し、迷ってる人を<span class="text-white border-b-2 border-accent">「巻き込む」</span>黄金パターン
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container mx-auto px-4 md:px-6 -mt-16 pb-20 relative z-20">
+        
+        <!-- Usage Scene Card (Intro) -->
+        <section class="bg-white rounded-2xl shadow-card p-8 mb-12 max-w-4xl mx-auto border-t-4 border-accent fade-in-up">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fa-solid fa-list-check text-accent mr-3"></i>
+                【使用シーン】
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-primary mt-1 mr-3 text-sm"></i>
+                        <span class="text-gray-700 font-medium">想定以上に売れてる時</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-primary mt-1 mr-3 text-sm"></i>
+                        <span class="text-gray-700 font-medium">通知が止まらない状態の時</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-primary mt-1 mr-3 text-sm"></i>
+                        <span class="text-gray-700 font-medium">「みんな買ってる」<span class="marker-yellow">感を出したい時</span></span>
+                    </li>
+                </ul>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-primary mt-1 mr-3 text-sm"></i>
+                        <span class="text-gray-700 font-medium">購入者の行動力を称賛したい時</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-primary mt-1 mr-3 text-sm"></i>
+                        <span class="text-gray-700 font-medium">盛り上がりを可視化して<span class="marker-yellow">迷ってる人を動かしたい時</span></span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Template Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+            <!-- E-1 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-100 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">E-1</span>
+                        売れてる報告・驚き型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+え、ちょっと待って。
+
+販売開始して〇時間なんだけど…
+
+もう〇〇人に買ってもらってる😳
+
+通知止まらないんだが🥺
+
+ありがとうございます😭🔥
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            売れてる事実をリアルタイムで共有。 「通知止まらない」で盛り上がりを可視化。 <span class="marker-yellow">感謝を伝えつつ、迷ってる人に焦りを与える。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- E-2 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-100 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">E-2</span>
+                        過去イチペース型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+いや、マジでビビってる。
+
+過去イチのペースで売れてる…
+
+やっぱり〇〇作りたい人、
+こんなにいたんだ🥺
+
+届けたい人に届いてる感覚がある。
+嬉しすぎる😭
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            「過去イチ」で特別感を出す。 需要があったことを再確認させる。 <span class="marker-yellow">感情を込めて喜びを共有。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- E-3 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-200 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">E-3</span>
+                        通知がヤバい型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+通知えぐいて🥺🥺🥺
+
+購入ありがとうございます😭
+
+正直ここまで反応もらえると思ってなかった。
+
+〇〇ぶりのコンテンツ、出してよかった🔥
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            カジュアルな表現で親近感を出す。 「思ってなかった」で謙虚さを見せる。 <span class="marker-yellow">「出してよかった」で満足感を共有。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- E-4 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-200 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">E-4</span>
+                        購入者の行動力がすごい型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+ちょ、購入者さんの行動力よ。
+
+もう〇〇完成させてる人いるんだけど😳
+
+「〇〇分でできました！」
+「思ったより簡単でした！」
+
+って報告きてる🥺
+
+やっぱ再現性バグってるわこれ…
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            購入者の行動の速さを称賛。 具体的な報告で再現性を証明。 <span class="marker-yellow">「バグってる」で強調して印象に残す。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- E-5 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-300 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">E-5</span>
+                        嬉しい悲鳴型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+あの、、、
+
+ありがたいことに売れすぎててLINEサポートの返信遅れるかもしれません🥺
+
+必ず返すので少しだけ待ってね🙏
+
+嬉しい悲鳴です😭🔥
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            「売れすぎてサポートが追いつかない」で人気を示す。 事前に返信遅れを伝えてクレーム防止。 <span class="marker-yellow">「嬉しい悲鳴」でポジティブに表現。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- E-6 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-300 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">E-6</span>
+                        自分が一番びっくり型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+ここまで売れると思ってなかったから
+正直、僕が一番びっくりしてる🥺
+
+でも、それだけ
+「〇〇〇〇欲しかった人」が
+いたってことだよね。
+
+届いてよかった😭
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            謙虚な姿勢を見せる。 「欲しかった人がいた」で需要を再確認。 <span class="marker-yellow">「届いてよかった」で感情を込める。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- E-7 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-100 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">E-7</span>
+                        購入者の声まとめ型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+購入者さんからの声、止まらない🥺
+
+「〇〇〇〇〇〇」
+「〇〇〇〇〇〇」
+「〇〇〇〇〇〇」
+
+みんなありがとう😭😭😭
+
+これ見て迷ってる人、
+この波に乗らない手はないよ🔥
+
+（リンク）
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            複数の声を並べて社会的証明を強化。 「波に乗らない手はない」で迷ってる人を動かす。 <span class="marker-yellow">リンクで購入導線を作る。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- E-8 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-100 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">E-8</span>
+                        〇〇本突破・速報型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+嘘でしょ…
+
+〇〇本突破しました😳
+
+販売開始から〇時間で。
+
+これ、過去の自分に見せてあげたい🥺
+
+買ってくれた皆さん、本当にありがとう😭🔥
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            具体的な数字で実績を示す。 「〇時間で」でスピード感を強調。 <span class="marker-yellow">感謝を伝えつつ、迷ってる人に「これだけ売れてる」を見せる。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- E-9 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-200 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">E-9</span>
+                        この価格は今だけ・再訴求型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+何回も言うけど、
+
+この価格は今だけです。
+
+この勢いで売れてるってことは、
+みんな価値わかってるってこと。
+
+迷ってる時間がもったいないよ🥺
+
+（リンク）
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            売れてる流れの中で価格を再訴求。 「みんな価値わかってる」で判断を後押し。 <span class="marker-yellow">「迷ってる時間がもったいない」で即決を促す。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- E-10 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-200 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">E-10</span>
+                        実力じゃなく需要があった型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+正直に言います。
+
+ここまで反応もらえたの、
+僕の実力じゃないです。
+
+「〇〇欲しかったけど作れなかった」
+って人がそれだけ多かったってこと。
+
+その悩み、解決できるの用意しました。
+あとは手に取るだけです🔥
+
+（リンク）
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            謙虚さを見せつつ需要の大きさを伝える。 「あとは手に取るだけ」でシンプルに行動を促す。 <span class="marker-yellow">自分を下げて商品の価値を上げる。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+             <!-- E-11 -->
+             <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-300 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">E-11</span>
+                        購入者同士の盛り上がり型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+購入者さん同士で盛り上がってるの見ると
+泣きそうになる🥺
+
+「私もできました！」
+「同じとこで詰まってた！」
+「作業会楽しみ！」
+
+このコミュニティ感、最高すぎる😭🔥
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            コミュニティの雰囲気を伝える。 「1人じゃない」という安心感を出す。 <span class="marker-yellow">購入後の体験価値を見せる。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- E-12 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-300 flex flex-col h-full border-2 border-accent/20">
+                <div class="p-6 border-b border-gray-100 bg-yellow-50">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-accent text-white text-xs px-2 py-1 rounded mr-2">E-12</span>
+                        価格は変えない宣言型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6 border-l-accent">
+あ、言い忘れてた。
+
+売れてるからって値段は変えません。
+
+初回限定〇,〇〇〇円のまま。
+
+ただし、期間終わったら確実に上げます。
+
+今のうちにどうぞ🥺
+
+（リンク）
+                    </div>
+                    <div class="bg-yellow-50 rounded-lg p-5 border border-yellow-100">
+                        <h4 class="text-accent font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            「売れてても値上げしない」で誠実さを見せる。 ただし期間終了後は上がることを明言。 <span class="marker-yellow">今買う理由を作る。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold text-white mb-4">Content Strategy Templates</h2>
+            <p class="mb-8 text-gray-400">想定以上の盛り上がりを可視化し、迷っている人を巻き込む。</p>
+            <div class="text-sm text-gray-500">
+                © High Demand Patterns. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script for Copy Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const boxes = document.querySelectorAll('.preview-box');
+            
+            boxes.forEach(box => {
+                // Create Copy Button
+                const btn = document.createElement('button');
+                btn.className = 'absolute top-2 right-2 bg-white text-primary border border-primary/20 hover:bg-blue-50 hover:border-primary px-3 py-1 rounded-md text-xs font-bold shadow-sm transition-all duration-200 flex items-center gap-1 z-10 cursor-pointer';
+                btn.innerHTML = '<i class="fa-regular fa-copy"></i> コピー';
+                
+                // Add click event
+                btn.addEventListener('click', () => {
+                    // Clone box to remove button text from copied content
+                    const clone = box.cloneNode(true);
+                    const btnInClone = clone.querySelector('button');
+                    if(btnInClone) btnInClone.remove();
+                    
+                    const textToCopy = clone.innerText.trim();
+                    
+                    // Copy execution
+                    const textArea = document.createElement("textarea");
+                    textArea.value = textToCopy;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    
+                    try {
+                        document.execCommand('copy');
+                        
+                        // Success Feedback
+                        const originalContent = btn.innerHTML;
+                        btn.innerHTML = '<i class="fa-solid fa-check text-green-500"></i> 完了!';
+                        btn.classList.add('border-green-500', 'text-green-600');
+                        
+                        setTimeout(() => {
+                            btn.innerHTML = originalContent;
+                            btn.classList.remove('border-green-500', 'text-green-600');
+                        }, 2000);
+                        
+                    } catch (err) {
+                        console.error('Copy failed', err);
+                        alert('コピーに失敗しました');
+                    }
+                    
+                    document.body.removeChild(textArea);
+                });
+                
+                box.appendChild(btn);
+            });
+        });
+    </script>
+
+</body>
+</html>
