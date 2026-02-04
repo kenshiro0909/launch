@@ -1,1 +1,347 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コンテンツ販売攻略 テンプレート集 | Sales Script Collection</title>
+    
+    <!-- Fonts: Noto Sans JP (本文用) & Shippori Mincho (見出し用) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons: FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Framework: Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Config & Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        serif: ['"Shippori Mincho"', 'serif'],
+                    },
+                    colors: {
+                        navy: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        gray: {
+                            50: '#f9fafb',
+                            100: '#f3f4f6',
+                            400: '#9ca3af',
+                            600: '#4b5563',
+                            800: '#1f2937',
+                        },
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'elegant': '0 10px 40px -10px rgba(0, 0, 0, 0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        /* カードのホバーエフェクト */
+        .template-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .template-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.1);
+        }
+        
+        /* セクションタイトルの装飾 */
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background-color: #d97706; /* Gold-600 */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-navy-900 text-white pt-24 pb-24 relative overflow-hidden">
+        <!-- Subtle Background Elements -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-b from-navy-800 to-navy-900 opacity-50 transform skew-x-12 translate-x-20"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-900/20 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2"></div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center max-w-4xl">
+            <p class="text-gold-400 text-sm font-bold tracking-[0.2em] uppercase mb-4 font-sans">Sales Strategy Templates</p>
+            <h1 class="text-3xl md:text-5xl font-serif font-medium leading-tight mb-8">
+                コンテンツ販売攻略<br>テンプレート集
+            </h1>
+            <p class="text-gray-400 text-base md:text-lg font-light max-w-2xl mx-auto leading-loose font-sans">
+                戦略的な言葉選びで、価値を正しく届ける。<br>
+                販売の全フェーズを網羅した、プロフェッショナルな文章ガイド。
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Navigation -->
+    <main class="container mx-auto px-4 md:px-8 py-16 relative z-20">
+        
+        <!-- Phase 1 -->
+        <div class="mb-20 fade-in-up delay-100">
+            <div class="text-center mb-12">
+                <span class="block text-gold-600 text-xs font-bold tracking-widest uppercase mb-2">Phase 01</span>
+                <h2 class="text-2xl md:text-3xl font-serif text-navy-900 section-title">販売準備・ローンチ</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- A -->
+                <a href="https://kenshiro0909.github.io/launch/A.html" class="template-card bg-white p-8 rounded-sm shadow-soft border-t-2 border-transparent hover:border-gold-400 group h-full flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="font-serif text-xl font-medium text-navy-900 group-hover:text-gold-600 transition-colors">A. 興味引き</span>
+                        <span class="text-gray-400 text-xs font-sans border border-gray-200 px-2 py-1 rounded-full">1〜2週間前</span>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6 font-sans flex-grow">
+                        新コンテンツ公開前の「空気作り」と「需要確認」を行うためのリサーチテンプレート。
+                    </p>
+                    <div class="flex items-center text-navy-800 text-sm font-medium pt-4 border-t border-gray-100 mt-auto">
+                        <i class="fa-solid fa-magnifying-glass-chart text-gold-500 mr-2"></i>
+                        需要発掘系
+                        <i class="fa-solid fa-arrow-right ml-auto text-gray-300 group-hover:text-gold-500 group-hover:translate-x-1 transition-all"></i>
+                    </div>
+                </a>
+
+                <!-- B -->
+                <a href="https://kenshiro0909.github.io/launch/B.html" class="template-card bg-white p-8 rounded-sm shadow-soft border-t-2 border-transparent hover:border-gold-400 group h-full flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="font-serif text-xl font-medium text-navy-900 group-hover:text-gold-600 transition-colors">B. 信頼構築</span>
+                        <span class="text-gray-400 text-xs font-sans border border-gray-200 px-2 py-1 rounded-full">3〜7日前</span>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6 font-sans flex-grow">
+                        モニター報告や特典チラ見せで、販売前の信頼と期待値を最大化するテンプレート。
+                    </p>
+                    <div class="flex items-center text-navy-800 text-sm font-medium pt-4 border-t border-gray-100 mt-auto">
+                        <i class="fa-solid fa-handshake text-gold-500 mr-2"></i>
+                        期待値UP系
+                        <i class="fa-solid fa-arrow-right ml-auto text-gray-300 group-hover:text-gold-500 group-hover:translate-x-1 transition-all"></i>
+                    </div>
+                </a>
+
+                <!-- C -->
+                <a href="https://kenshiro0909.github.io/launch/C.html" class="template-card bg-white p-8 rounded-sm shadow-soft border-t-2 border-transparent hover:border-gold-400 group h-full flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="font-serif text-xl font-medium text-navy-900 group-hover:text-gold-600 transition-colors">C. 激戦予告</span>
+                        <span class="text-gray-400 text-xs font-sans border border-gray-200 px-2 py-1 rounded-full">1〜2日前</span>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6 font-sans flex-grow">
+                        いよいよ販売開始。「激戦」を演出し、開始直後の購入ラッシュを作るための予告。
+                    </p>
+                    <div class="flex items-center text-navy-800 text-sm font-medium pt-4 border-t border-gray-100 mt-auto">
+                        <i class="fa-solid fa-bullhorn text-gold-500 mr-2"></i>
+                        販売直前系
+                        <i class="fa-solid fa-arrow-right ml-auto text-gray-300 group-hover:text-gold-500 group-hover:translate-x-1 transition-all"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="mb-20 fade-in-up delay-200">
+            <div class="text-center mb-12">
+                <span class="block text-gold-600 text-xs font-bold tracking-widest uppercase mb-2">Phase 02</span>
+                <h2 class="text-2xl md:text-3xl font-serif text-navy-900 section-title">販売期間中</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- D -->
+                <a href="https://kenshiro0909.github.io/launch/D.html" class="template-card bg-white p-8 rounded-sm shadow-soft border-t-2 border-transparent hover:border-gold-400 group h-full flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="font-serif text-xl font-medium text-navy-900 group-hover:text-gold-600 transition-colors">D. 盛り上げ</span>
+                        <span class="text-gray-400 text-xs font-sans border border-gray-200 px-2 py-1 rounded-full">当日〜3日目</span>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6 font-sans flex-grow">
+                        購入者の熱量を拡散し、迷っている人の背中を押すムーブメントを作る投稿集。
+                    </p>
+                    <div class="flex items-center text-navy-800 text-sm font-medium pt-4 border-t border-gray-100 mt-auto">
+                        <i class="fa-solid fa-fire text-gold-500 mr-2"></i>
+                        販売中系
+                        <i class="fa-solid fa-arrow-right ml-auto text-gray-300 group-hover:text-gold-500 group-hover:translate-x-1 transition-all"></i>
+                    </div>
+                </a>
+
+                <!-- E -->
+                <a href="https://kenshiro0909.github.io/launch/E.html" class="template-card bg-white p-8 rounded-sm shadow-soft border-t-2 border-transparent hover:border-gold-400 group h-full flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="font-serif text-xl font-medium text-navy-900 group-hover:text-gold-600 transition-colors">E. 売れ行き</span>
+                        <span class="text-gray-400 text-xs font-sans border border-gray-200 px-2 py-1 rounded-full">随時</span>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6 font-sans flex-grow">
+                        通知が止まらない等の「売れてる感」を可視化し、バンドワゴン効果を狙う投稿パターン。
+                    </p>
+                    <div class="flex items-center text-navy-800 text-sm font-medium pt-4 border-t border-gray-100 mt-auto">
+                        <i class="fa-solid fa-arrow-trend-up text-gold-500 mr-2"></i>
+                        好調報告系
+                        <i class="fa-solid fa-arrow-right ml-auto text-gray-300 group-hover:text-gold-500 group-hover:translate-x-1 transition-all"></i>
+                    </div>
+                </a>
+
+                <!-- F -->
+                <a href="https://kenshiro0909.github.io/launch/F.html" class="template-card bg-white p-8 rounded-sm shadow-soft border-t-2 border-transparent hover:border-gold-400 group h-full flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="font-serif text-xl font-medium text-navy-900 group-hover:text-gold-600 transition-colors">F. 突破記念</span>
+                        <span class="text-gray-400 text-xs font-sans border border-gray-200 px-2 py-1 rounded-full">節目毎</span>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6 font-sans flex-grow">
+                        10本、50本、100本突破などの実績で社会的証明を強化する記念投稿テンプレート。
+                    </p>
+                    <div class="flex items-center text-navy-800 text-sm font-medium pt-4 border-t border-gray-100 mt-auto">
+                        <i class="fa-solid fa-crown text-gold-500 mr-2"></i>
+                        実績報告系
+                        <i class="fa-solid fa-arrow-right ml-auto text-gray-300 group-hover:text-gold-500 group-hover:translate-x-1 transition-all"></i>
+                    </div>
+                </a>
+
+                <!-- G -->
+                <a href="https://kenshiro0909.github.io/launch/G.html" class="template-card bg-white p-8 rounded-sm shadow-soft border-t-2 border-transparent hover:border-red-500 group h-full flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="font-serif text-xl font-medium text-navy-900 group-hover:text-red-600 transition-colors">G. 値上げ・終了</span>
+                        <span class="text-red-500 text-xs font-sans border border-red-100 bg-red-50 px-2 py-1 rounded-full">4日目〜終了</span>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6 font-sans flex-grow">
+                        初回限定価格の終了に向けた強力なクロージングで、最後の駆け込みを作る必須テンプレート。
+                    </p>
+                    <div class="flex items-center text-navy-800 text-sm font-medium pt-4 border-t border-gray-100 mt-auto">
+                        <i class="fa-solid fa-hourglass-half text-red-500 mr-2"></i>
+                        クロージング系
+                        <i class="fa-solid fa-arrow-right ml-auto text-gray-300 group-hover:text-red-600 group-hover:translate-x-1 transition-all"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="mb-20 fade-in-up delay-300">
+            <div class="text-center mb-12">
+                <span class="block text-gold-600 text-xs font-bold tracking-widest uppercase mb-2">Phase 03</span>
+                <h2 class="text-2xl md:text-3xl font-serif text-navy-900 section-title">販売後・追加施策</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- I -->
+                <a href="https://kenshiro0909.github.io/launch/I.html" class="template-card bg-white p-8 rounded-sm shadow-soft border-t-2 border-transparent hover:border-gold-400 group h-full flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="font-serif text-xl font-medium text-navy-900 group-hover:text-gold-600 transition-colors">I. 限定セール</span>
+                        <span class="text-gray-400 text-xs font-sans border border-gray-200 px-2 py-1 rounded-full">セール時</span>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6 font-sans flex-grow">
+                        値上げ後の再チャンス。「買い逃した」層を確実に拾い上げるためのキャンペーン施策。
+                    </p>
+                    <div class="flex items-center text-navy-800 text-sm font-medium pt-4 border-t border-gray-100 mt-auto">
+                        <i class="fa-solid fa-tag text-gold-500 mr-2"></i>
+                        期間限定系
+                        <i class="fa-solid fa-arrow-right ml-auto text-gray-300 group-hover:text-gold-500 group-hover:translate-x-1 transition-all"></i>
+                    </div>
+                </a>
+
+                <!-- J -->
+                <a href="https://kenshiro0909.github.io/launch/J.html" class="template-card bg-white p-8 rounded-sm shadow-soft border-t-2 border-transparent hover:border-gold-400 group h-full flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="font-serif text-xl font-medium text-navy-900 group-hover:text-gold-600 transition-colors">J. アプデ告知</span>
+                        <span class="text-gray-400 text-xs font-sans border border-gray-200 px-2 py-1 rounded-full">アプデ時</span>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6 font-sans flex-grow">
+                        コンテンツの進化を伝え、既存顧客の満足度向上と新規顧客の期待感を高める。
+                    </p>
+                    <div class="flex items-center text-navy-800 text-sm font-medium pt-4 border-t border-gray-100 mt-auto">
+                        <i class="fa-solid fa-rotate text-gold-500 mr-2"></i>
+                        アップデート系
+                        <i class="fa-solid fa-arrow-right ml-auto text-gray-300 group-hover:text-gold-500 group-hover:translate-x-1 transition-all"></i>
+                    </div>
+                </a>
+
+                <!-- K -->
+                <a href="https://kenshiro0909.github.io/launch/K.html" class="template-card bg-white p-8 rounded-sm shadow-soft border-t-2 border-transparent hover:border-gold-400 group h-full flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="font-serif text-xl font-medium text-navy-900 group-hover:text-gold-600 transition-colors">K. 成果報告</span>
+                        <span class="text-gray-400 text-xs font-sans border border-gray-200 px-2 py-1 rounded-full">随時</span>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6 font-sans flex-grow">
+                        リアルな成果報告をシェアし、「自分にもできる」という再現性を証明する投稿集。
+                    </p>
+                    <div class="flex items-center text-navy-800 text-sm font-medium pt-4 border-t border-gray-100 mt-auto">
+                        <i class="fa-regular fa-comments text-gold-500 mr-2"></i>
+                        ユーザーの声系
+                        <i class="fa-solid fa-arrow-right ml-auto text-gray-300 group-hover:text-gold-500 group-hover:translate-x-1 transition-all"></i>
+                    </div>
+                </a>
+
+                <!-- L -->
+                <a href="https://kenshiro0909.github.io/launch/L.html" class="template-card bg-white p-8 rounded-sm shadow-soft border-t-2 border-transparent hover:border-gold-400 group h-full flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="font-serif text-xl font-medium text-navy-900 group-hover:text-gold-600 transition-colors">L. 特典追加</span>
+                        <span class="text-gray-400 text-xs font-sans border border-gray-200 px-2 py-1 rounded-full">CP時</span>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6 font-sans flex-grow">
+                        強力なオファーを追加し、迷っている人の背中を最後に一押しするキャンペーン用。
+                    </p>
+                    <div class="flex items-center text-navy-800 text-sm font-medium pt-4 border-t border-gray-100 mt-auto">
+                        <i class="fa-solid fa-gift text-gold-500 mr-2"></i>
+                        特典追加系
+                        <i class="fa-solid fa-arrow-right ml-auto text-gray-300 group-hover:text-gold-500 group-hover:translate-x-1 transition-all"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 text-gray-400 py-16 border-t border-navy-800">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-serif text-white mb-4">Content Strategy Templates</h2>
+            <p class="mb-8 text-sm font-light tracking-wide opacity-70">Total Solutions for Your Digital Product Sales.</p>
+            <div class="text-xs text-gray-600">
+                © Sales Script Collection. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
