@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C. 販売直前・激戦予告系テンプレート | コンテンツ販売攻略</title>
+    
+    <!-- Fonts: Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons: FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Framework: Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Config & Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1e3a8a',   // Deep Indigo
+                        accent: '#f59e0b',    // Amber
+                        surface: '#f8fafc',   // Slate 50
+                        paper: '#ffffff',
+                        text: '#334155',      // Slate 700
+                    },
+                    boxShadow: {
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                        'card-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* ブロガー風マーカー装飾 */
+        .marker-yellow {
+            background: linear-gradient(transparent 60%, #fef08a 60%);
+            font-weight: 700;
+            padding: 0 4px;
+        }
+        
+        /* スマホのようなプレビュー枠 */
+        .preview-box {
+            background-color: #f3f4f6;
+            border-left: 4px solid #1e3a8a;
+            padding: 1.5rem;
+            padding-top: 2.5rem; /* コピーボタン用の余白を追加 */
+            border-radius: 0 0.5rem 0.5rem 0;
+            font-family: sans-serif;
+            white-space: pre-wrap; /* 改行を維持 */
+            line-height: 1.8;
+            color: #1f2937;
+            position: relative;
+        }
+        .preview-box::before {
+            content: 'POST TEMPLATE';
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            background: #1e3a8a;
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-weight: bold;
+            z-index: 20;
+        }
+
+        /* アニメーション */
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 遅延表示の設定 */
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body class="bg-surface text-text font-sans antialiased selection:bg-primary selection:text-white">
+
+    <!-- Header Section -->
+    <header class="bg-primary text-white pt-20 pb-24 relative overflow-hidden">
+        <!-- Decoration circles -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 translate-x-1/3 translate-y-1/3"></div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center max-w-4xl">
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-800 text-blue-200 text-sm font-semibold mb-4 border border-blue-700">
+                Phase: Sales Preparation / Intense Anticipation
+            </span>
+            <h1 class="text-3xl md:text-5xl font-black leading-tight mb-6">
+                C. 販売直前・激戦予告系<br>
+                <span class="text-blue-200 text-2xl md:text-3xl font-bold mt-2 block">（販売1〜2日前）</span>
+            </h1>
+            <p class="text-blue-100 text-lg md:text-xl font-medium">
+                販売開始直前の<span class="text-white border-b-2 border-accent">「最終盛り上げ」</span>と<span class="text-white border-b-2 border-accent">「激戦演出」</span>の黄金パターン
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container mx-auto px-4 md:px-6 -mt-16 pb-20 relative z-20">
+        
+        <!-- Usage Scene Card (Intro) -->
+        <section class="bg-white rounded-2xl shadow-card p-8 mb-12 max-w-4xl mx-auto border-t-4 border-accent fade-in-up">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fa-solid fa-list-check text-accent mr-3"></i>
+                【使用シーン】
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-primary mt-1 mr-3 text-sm"></i>
+                        <span class="text-gray-700 font-medium">販売開始直前の最終盛り上げ</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-primary mt-1 mr-3 text-sm"></i>
+                        <span class="text-gray-700 font-medium">「気になってる人 vs 限定数」の<span class="marker-yellow">構図を作りたい時</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-primary mt-1 mr-3 text-sm"></i>
+                        <span class="text-gray-700 font-medium">販売日時を告知する時</span>
+                    </li>
+                </ul>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-primary mt-1 mr-3 text-sm"></i>
+                        <span class="text-gray-700 font-medium">価格、内容、特典を正式発表する時</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-primary mt-1 mr-3 text-sm"></i>
+                        <span class="text-gray-700 font-medium">購入ボタン直行の状態を作りたい時</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Template Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+            <!-- C-1 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-100 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">C-1</span>
+                        激戦予告・数字で煽る型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+やばい…
+
+まだ販売してないのに
+「気になる！」って人が〇〇人超えてる🥺
+
+最初の〇〇部だけ最安値で、
+〇〇部目から一気に〇〇〇〇円上がるんだけど…
+
+これ、販売開始した瞬間に
+〇〇部なくなる可能性ある💦
+
+マジで激戦になりそう🥺
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            「気になってる人数 vs 限定数」の構図を作る。 <span class="marker-yellow">数字を出すことで競争心を煽る。</span> 「なくなるかも」という焦りを生む。 販売前から緊急性を感じさせる。
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- C-2 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-100 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">C-2</span>
+                        激戦予告・計算させる型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+ちょっと計算してみて。
+
+気になってる人：〇〇人以上
+最安値の枠：〇〇部だけ
+
+〇〇人以上は最安値で買えない計算になる。
+
+しかも〇〇部目からは+〇〇〇〇円。
+
+これ、秒で決まると思う🥺
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            読者自身に計算させることで、 「自分も買えないかも」という危機感を持たせる。 具体的な数字で緊急性を強調。 <span class="marker-yellow">「秒で決まる」で即決を促す。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- C-3 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-200 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">C-3</span>
+                        販売日時予告型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+これは予告です。
+
+〇月〇日（〇）〇〇:〇〇に販売開始します。
+
+最安値は〇〇部限定。
+〇〇人以上が気になってる状態。
+
+激戦は確定してます🥺
+
+通知ONにして待っててね🔥
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            販売日時を明確に伝える。 「予告です」と前置きして重要感を出す。 <span class="marker-yellow">通知ONを促して取りこぼしを防ぐ。</span> 待機状態を作る。
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- C-4 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-200 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">C-4</span>
+                        詳細発表前の最終確認型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+お待たせしました。
+
+今日、詳細発表します🥺
+
+その前に改めて…
+
+僕が〇〇分で作った〇〇見てほしい👇
+
+（リンク）
+（リンク）
+（リンク）
+
+これが〇〇で作り放題になります。
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            詳細発表の前に成果物を再度見せる。 「これが手に入る」を具体的にイメージさせる。 <span class="marker-yellow">期待値を最大化してから発表に入る。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- C-5 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-300 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">C-5</span>
+                        コンテンツ名発表型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+コンテンツ名発表します。
+
+【〇〇〇〇〇〇〇〇】
+
+〇〇知識ゼロでも、
+完全無料で〇〇級〇〇が作れる方法を
+全て詰め込みました🔥
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            コンテンツ名をシンプルに発表。 名前だけでインパクトを与える。 <span class="marker-yellow">一言で価値を伝える。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- C-6 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-300 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">C-6</span>
+                        内容まとめ型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+このコンテンツで手に入るもの👇
+
+・〇〇で〇〇が作り放題
+・外注費0円で何個でも
+・〇〇も〇〇も自由自在
+・〇〇の導線設計
+・〇〇で売上が伸びる仕組み
+
+一度覚えれば一生使えるスキルです🥺
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            手に入るものを箇条書きで明確化。 「何が得られるか」を具体的に伝える。 <span class="marker-yellow">「一生使える」で長期的な価値を示す。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- C-7 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-100 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">C-7</span>
+                        特典まとめ型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+特典もヤバいの揃えました🔥
+
+【特典1】〇〇〇〇
+【特典2】〇〇〇〇
+【特典3】〇〇〇〇
+【特典4】〇〇〇〇 ←これガチでヤバい
+【特典5】〇〇〇〇
+【特典6】購入者限定LINEサポート
+【特典7】今後のアップデート永久無料
+
+正直、特典だけで元取れます🥺
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            特典を一覧で見せて価値を積み上げる。 「これガチでヤバい」で注目ポイントを作る。 <span class="marker-yellow">「特典だけで元取れる」で購入ハードルを下げる。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- C-8 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-100 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">C-8</span>
+                        価格アンカリング型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+で、価格なんだけど…
+
+〇〇外注したら相場これ👇
+・〇〇〇〇 → 〇〜〇万円
+・〇〇〇〇 → 〇〜〇万円
+
+それが作り放題になるなら、
+〇〇,〇〇〇円でも正直安いと思ってる。
+
+でも今回は…
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            高い価格をアンカリングとして出す。 <span class="marker-yellow">「これでも安い」という基準を作る。</span> 「でも今回は…」で期待を持たせる。
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- C-9 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-200 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">C-9</span>
+                        価格発表型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+「1人でも多くの人に〇〇の魅力を知ってほしい」
+
+この想いから特別価格にしました。
+
+通常価格：〇〇,〇〇〇円
+↓
+初回限定：〇,〇〇〇円
+
+外注1回分にも満たない金額で、
+一生〇〇作り放題になります🥺
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            想いを先に伝えてから価格を出す。 通常価格との差で「お得感」を演出。 <span class="marker-yellow">「外注1回分以下」で価値を再確認させる。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- C-10 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-200 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">C-10</span>
+                        限定性訴求型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+ただし、この価格は今だけです。
+
+破格すぎるので【〇〇名様限定】といたします。
+
+今後アップデート、完売毎に値上げしていきます。
+
+✔ 先行者だけが手にできる最安値
+✔ 価格が上がる前に最もお得に始められる
+✔ 今すぐスタートすれば一足先に成果へ
+
+このチャンス逃したら、
+二度とこの価格では手に入らないかも🥺
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            限定数と値上げで緊急性を作る。 チェックマークで視覚的に整理。 <span class="marker-yellow">「二度とこの価格では」で今すぐ行動を促す。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+             <!-- C-11 -->
+             <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-300 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">C-11</span>
+                        先行者利益・再訴求型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+半年後には
+「〇〇持ってて当たり前」
+の時代になる。
+
+今はまだ持ってる人少ない。
+だからこそ先行者利益が取れる。
+
+気づいた人から始めてます。
+
+あなたはどっち側にいたい？🔥
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            先行者利益を再度訴求。 「まだ少ない」で今がチャンスと伝える。 <span class="marker-yellow">「どっち側？」で選択を迫る。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- C-12 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-300 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">C-12</span>
+                        購入リンク案内型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+購入はこちらから👇
+
+（リンク）
+
+【〇〇〇〇〇〇〇〇】
+
+初回限定：〇,〇〇〇円
+
+〇〇分後には、
+あなただけの〇〇級〇〇が完成してます🔥
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            シンプルにリンクを案内。 余計な説明は入れない。 <span class="marker-yellow">「〇〇分後には完成」で未来を想像させる。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- C-13 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-100 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">C-13</span>
+                        最後の一押し型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+最後にもう一度言わせて。
+
+プロの〇〇が〇〜〇週間かける〇〇を、
+ド素人が数分で量産できる時代になりました。
+
+外注費〇〜〇万が0円に。
+一度覚えれば一生使えるスキル。
+
+やるなら今です🥺
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            販売直前の最後の一押し。 プロとの対比で価値を再確認させる。 <span class="marker-yellow">「やるなら今」でシンプルに背中を押す。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- C-14 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-100 flex flex-col h-full border-2 border-accent/10">
+                <div class="p-6 border-b border-gray-100 bg-red-50">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-red-500 text-white text-xs px-2 py-1 rounded mr-2">C-14</span>
+                        緊急性・値上げ迫る型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6 border-l-red-500">
+正直に言います。
+
+最初の〇〇部だけ特別価格です。
+〇〇部目から一気に〇,〇〇〇円上がります。
+そこからは〇,〇〇〇円ずつ上がっていく。
+
+つまり、今が一番安い。
+
+迷ってる間に誰かが買ってる🥺
+
+（リンク）
+                    </div>
+                    <div class="bg-red-50 rounded-lg p-5 border border-red-100">
+                        <h4 class="text-red-600 font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            値上げの仕組みを具体的に伝える。 「今が一番安い」を明確にする。 <span class="marker-yellow">「迷ってる間に誰かが」で競争心を煽る。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- C-15 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-200 flex flex-col h-full border-2 border-accent/20">
+                <div class="p-6 border-b border-gray-100 bg-yellow-50">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-accent text-white text-xs px-2 py-1 rounded mr-2">C-15</span>
+                        残り枠カウントダウン型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6 border-l-accent">
+あと〇部で値上げします。
+
+今：〇,〇〇〇円
+↓
+〇〇部目〜：〇,〇〇〇円
+↓
+さらに〇,〇〇〇円ずつUP
+
+同じ内容なのに、
+買うタイミングで数千円変わる。
+
+どっちが賢いかは明白だよね🥺
+
+（リンク）
+                    </div>
+                    <div class="bg-yellow-50 rounded-lg p-5 border border-yellow-100">
+                        <h4 class="text-accent font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            残り枠を明示して緊急性を高める。 価格の推移を視覚的に見せる。 <span class="marker-yellow">「どっちが賢い」で即決を促す。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold text-white mb-4">Content Strategy Templates</h2>
+            <p class="mb-8 text-gray-400">激戦を演出し、販売直後の爆発力を最大化する。</p>
+            <div class="text-sm text-gray-500">
+                © Sales Launch Patterns. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script for Copy Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const boxes = document.querySelectorAll('.preview-box');
+            
+            boxes.forEach(box => {
+                // Create Copy Button
+                const btn = document.createElement('button');
+                btn.className = 'absolute top-2 right-2 bg-white text-primary border border-primary/20 hover:bg-blue-50 hover:border-primary px-3 py-1 rounded-md text-xs font-bold shadow-sm transition-all duration-200 flex items-center gap-1 z-10 cursor-pointer';
+                btn.innerHTML = '<i class="fa-regular fa-copy"></i> コピー';
+                
+                // Add click event
+                btn.addEventListener('click', () => {
+                    // Clone box to remove button text from copied content
+                    const clone = box.cloneNode(true);
+                    const btnInClone = clone.querySelector('button');
+                    if(btnInClone) btnInClone.remove();
+                    
+                    const textToCopy = clone.innerText.trim();
+                    
+                    // Copy execution
+                    const textArea = document.createElement("textarea");
+                    textArea.value = textToCopy;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    
+                    try {
+                        document.execCommand('copy');
+                        
+                        // Success Feedback
+                        const originalContent = btn.innerHTML;
+                        btn.innerHTML = '<i class="fa-solid fa-check text-green-500"></i> 完了!';
+                        btn.classList.add('border-green-500', 'text-green-600');
+                        
+                        setTimeout(() => {
+                            btn.innerHTML = originalContent;
+                            btn.classList.remove('border-green-500', 'text-green-600');
+                        }, 2000);
+                        
+                    } catch (err) {
+                        console.error('Copy failed', err);
+                        alert('コピーに失敗しました');
+                    }
+                    
+                    document.body.removeChild(textArea);
+                });
+                
+                box.appendChild(btn);
+            });
+        });
+    </script>
+
+</body>
+</html>
