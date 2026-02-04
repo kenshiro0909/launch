@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J. アップデート告知系テンプレート | コンテンツ販売攻略</title>
+    
+    <!-- Fonts: Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons: FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Framework: Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Config & Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1e3a8a',   // Deep Indigo
+                        accent: '#f59e0b',    // Amber
+                        surface: '#f8fafc',   // Slate 50
+                        paper: '#ffffff',
+                        text: '#334155',      // Slate 700
+                    },
+                    boxShadow: {
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                        'card-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* ブロガー風マーカー装飾 */
+        .marker-yellow {
+            background: linear-gradient(transparent 60%, #fef08a 60%);
+            font-weight: 700;
+            padding: 0 4px;
+        }
+        
+        /* スマホのようなプレビュー枠 */
+        .preview-box {
+            background-color: #f3f4f6;
+            border-left: 4px solid #1e3a8a;
+            padding: 1.5rem;
+            padding-top: 2.5rem; /* コピーボタン用の余白を追加 */
+            border-radius: 0 0.5rem 0.5rem 0;
+            font-family: sans-serif;
+            white-space: pre-wrap; /* 改行を維持 */
+            line-height: 1.8;
+            color: #1f2937;
+            position: relative;
+        }
+        .preview-box::before {
+            content: 'POST TEMPLATE';
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            background: #1e3a8a;
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-weight: bold;
+            z-index: 20;
+        }
+
+        /* アニメーション */
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 遅延表示の設定 */
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body class="bg-surface text-text font-sans antialiased selection:bg-primary selection:text-white">
+
+    <!-- Header Section -->
+    <header class="bg-primary text-white pt-20 pb-24 relative overflow-hidden">
+        <!-- Decoration circles -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 translate-x-1/3 translate-y-1/3"></div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center max-w-4xl">
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-800 text-blue-200 text-sm font-semibold mb-4 border border-blue-700">
+                Phase: Updates / Improvements
+            </span>
+            <h1 class="text-3xl md:text-5xl font-black leading-tight mb-6">
+                J. アップデート告知系<br>
+                <span class="text-blue-200 text-2xl md:text-3xl font-bold mt-2 block">（アプデ時に随時）</span>
+            </h1>
+            <p class="text-blue-100 text-lg md:text-xl font-medium">
+                コンテンツの<span class="text-white border-b-2 border-accent">「進化」</span>を伝え、既存客の<span class="text-white border-b-2 border-accent">「満足度」</span>と新規客の<span class="text-white border-b-2 border-accent">「期待」</span>を高める黄金パターン
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container mx-auto px-4 md:px-6 -mt-16 pb-20 relative z-20">
+        
+        <!-- Usage Scene Card (Intro) -->
+        <section class="bg-white rounded-2xl shadow-card p-8 mb-12 max-w-4xl mx-auto border-t-4 border-accent fade-in-up">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fa-solid fa-list-check text-accent mr-3"></i>
+                【使用シーン】
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-primary mt-1 mr-3 text-sm"></i>
+                        <span class="text-gray-700 font-medium">コンテンツをアップデートした時</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-primary mt-1 mr-3 text-sm"></i>
+                        <span class="text-gray-700 font-medium">購入者の声を反映して<span class="marker-yellow">改善した時</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-primary mt-1 mr-3 text-sm"></i>
+                        <span class="text-gray-700 font-medium">大型アップデートを実施した時</span>
+                    </li>
+                </ul>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-primary mt-1 mr-3 text-sm"></i>
+                        <span class="text-gray-700 font-medium">アプデを理由に値上げしたい時</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-primary mt-1 mr-3 text-sm"></i>
+                        <span class="text-gray-700 font-medium">「早く買った人が得」を<span class="marker-yellow">訴求したい時</span></span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Template Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+            <!-- J-1 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-100 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">J-1</span>
+                        アプデ予告型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+お知らせです。
+
+近日中にアップデートします🥺
+
+購入者さんの声を反映して、
+さらに使いやすくなります🔥
+
+詳細はまた発表するね！
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            アップデートを予告して期待感を作る。 「購入者の声を反映」で顧客重視の姿勢を見せる。 <span class="marker-yellow">購入検討中の人にも価値向上を伝える。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- J-2 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-100 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">J-2</span>
+                        アプデ告知・内容公開型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+アップデートしました🔥
+
+【追加内容】
+・〇〇〇〇〇〇
+・〇〇〇〇〇〇
+・〇〇〇〇〇〇
+
+購入者さんは追加料金なしで見れます🥺
+
+まだの人、どんどん進化してるよ👀
+
+（リンク）
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            追加内容を具体的に公開。 「追加料金なし」で購入者へのメリットを強調。 <span class="marker-yellow">迷ってる人に「進化してる」ことを伝える。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- J-3 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-200 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">J-3</span>
+                        購入者の声反映型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+「ここわかりにくい」
+「こういうの欲しい」
+
+って声をもらってたので、
+全部反映しました🥺
+
+購入者さんの声、ちゃんと届いてます。
+
+これからもアップデート続けていくね🔥
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            購入者の声を聞いてることを示す。 「全部反映」でサポートの手厚さをアピール。 <span class="marker-yellow">今後も改善し続ける姿勢を見せる。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- J-4 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-200 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">J-4</span>
+                        早く買った人が得型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+アプデのたびに思うんだけど…
+
+最初に買った人が一番お得だよね🥺
+
+・初回限定価格で買えて
+・アプデは全部無料で見れて
+・内容はどんどん増えていく
+
+早く決断した人の勝ち🔥
+
+（リンク）
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            早く買うメリットを強調。 アプデ無料という価値を再確認させる。 <span class="marker-yellow">迷ってる人に「早く決断した方がいい」と促す。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- J-5 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-300 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">J-5</span>
+                        神アプデ型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+今回のアップデート、
+地味にヤバいです🥺
+
+購入者さんから
+
+「これ神アプデ！」
+「痒いところに手が届く！」
+
+って声もらってる😭
+
+まだの人、損してるよ🔥
+
+（リンク）
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            購入者の声を使ってアプデの価値を伝える。 「神アプデ」というワードでインパクト。 <span class="marker-yellow">「損してる」で迷ってる人を刺激。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- J-6 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-300 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">J-6</span>
+                        アプデ内容チラ見せ型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+アプデ内容チラ見せ👀
+
+〇〇〇〇の解説を追加しました。
+
+これで〇〇で詰まる人、
+ほぼいなくなると思う🥺
+
+「わからない」を徹底的に潰していきます🔥
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            具体的な改善内容を見せる。 「詰まる人がいなくなる」で価値を伝える。 <span class="marker-yellow">継続的な改善姿勢をアピール。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- J-7 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-100 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">J-7</span>
+                        大型アプデ告知型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+【大型アップデートのお知らせ】
+
+今回はガチでヤバいです🥺
+
+・〇〇〇〇〇〇
+・〇〇〇〇〇〇
+・〇〇〇〇〇〇
+
+正直、これだけで別コンテンツ作れるレベル。
+
+でも購入者さんは無料です🔥
+
+（リンク）
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            「大型」と銘打ってインパクトを出す。 「別コンテンツレベル」で価値の大きさを伝える。 <span class="marker-yellow">購入者は無料という特典を強調。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- J-8 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-100 flex flex-col h-full border-2 border-accent/20">
+                <div class="p-6 border-b border-gray-100 bg-yellow-50">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-accent text-white text-xs px-2 py-1 rounded mr-2">J-8</span>
+                        アプデ後の値上げ予告型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6 border-l-accent">
+アップデートしたので、
+近日中に値上げします。
+
+内容増えたから当然だよね🥺
+
+今の価格で買えるのは今だけ。
+
+迷ってる人、今のうちにどうぞ🔥
+
+（リンク）
+                    </div>
+                    <div class="bg-yellow-50 rounded-lg p-5 border border-yellow-100">
+                        <h4 class="text-accent font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            アプデを理由に値上げを正当化。 「内容増えたから当然」で納得感を出す。 <span class="marker-yellow">値上げ前に購入を促す。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- J-9 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-200 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">J-9</span>
+                        アプデ履歴公開型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+これまでのアプデ履歴、
+ちょっと振り返ってみる🥺
+
+・〇月：〇〇〇〇追加
+・〇月：〇〇〇〇改善
+・〇月：〇〇〇〇追加
+・今回：〇〇〇〇追加
+
+買った時より確実に良くなってる。
+
+これからも進化し続けます🔥
+
+（リンク）
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            アプデ履歴を見せて継続的な改善を証明。 「買った時より良くなってる」で価値向上を示す。 <span class="marker-yellow">今後も進化することを約束。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- J-10 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-200 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">J-10</span>
+                        購入者限定アプデ特典型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+購入者さん限定のお知らせ🥺
+
+今回のアプデで、
+〇〇〇〇を追加しました。
+
+これ、リクエスト多かったやつ。
+
+やっと形にできた😭
+
+確認してみてね🔥
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            購入者限定で特別感を出す。 「リクエスト多かった」で顧客の声を反映してることを示す。 <span class="marker-yellow">購入者との関係性を強化。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold text-white mb-4">Content Strategy Templates</h2>
+            <p class="mb-8 text-gray-400">アップデートで信頼を積み重ね、長期的な売上を作る。</p>
+            <div class="text-sm text-gray-500">
+                © Update Strategy Patterns. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script for Copy Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const boxes = document.querySelectorAll('.preview-box');
+            
+            boxes.forEach(box => {
+                // Create Copy Button
+                const btn = document.createElement('button');
+                btn.className = 'absolute top-2 right-2 bg-white text-primary border border-primary/20 hover:bg-blue-50 hover:border-primary px-3 py-1 rounded-md text-xs font-bold shadow-sm transition-all duration-200 flex items-center gap-1 z-10 cursor-pointer';
+                btn.innerHTML = '<i class="fa-regular fa-copy"></i> コピー';
+                
+                // Add click event
+                btn.addEventListener('click', () => {
+                    // Clone box to remove button text from copied content
+                    const clone = box.cloneNode(true);
+                    const btnInClone = clone.querySelector('button');
+                    if(btnInClone) btnInClone.remove();
+                    
+                    const textToCopy = clone.innerText.trim();
+                    
+                    // Copy execution
+                    const textArea = document.createElement("textarea");
+                    textArea.value = textToCopy;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    
+                    try {
+                        document.execCommand('copy');
+                        
+                        // Success Feedback
+                        const originalContent = btn.innerHTML;
+                        btn.innerHTML = '<i class="fa-solid fa-check text-green-500"></i> 完了!';
+                        btn.classList.add('border-green-500', 'text-green-600');
+                        
+                        setTimeout(() => {
+                            btn.innerHTML = originalContent;
+                            btn.classList.remove('border-green-500', 'text-green-600');
+                        }, 2000);
+                        
+                    } catch (err) {
+                        console.error('Copy failed', err);
+                        alert('コピーに失敗しました');
+                    }
+                    
+                    document.body.removeChild(textArea);
+                });
+                
+                box.appendChild(btn);
+            });
+        });
+    </script>
+
+</body>
+</html>
