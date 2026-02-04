@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I. 期間限定セール系テンプレート | コンテンツ販売攻略</title>
+    
+    <!-- Fonts: Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons: FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Framework: Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Config & Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1e3a8a',   // Deep Indigo
+                        accent: '#f59e0b',    // Amber
+                        surface: '#f8fafc',   // Slate 50
+                        paper: '#ffffff',
+                        text: '#334155',      // Slate 700
+                    },
+                    boxShadow: {
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                        'card-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* ブロガー風マーカー装飾 */
+        .marker-yellow {
+            background: linear-gradient(transparent 60%, #fef08a 60%);
+            font-weight: 700;
+            padding: 0 4px;
+        }
+        
+        /* スマホのようなプレビュー枠 */
+        .preview-box {
+            background-color: #f3f4f6;
+            border-left: 4px solid #1e3a8a;
+            padding: 1.5rem;
+            padding-top: 2.5rem; /* コピーボタン用の余白を追加 */
+            border-radius: 0 0.5rem 0.5rem 0;
+            font-family: sans-serif;
+            white-space: pre-wrap; /* 改行を維持 */
+            line-height: 1.8;
+            color: #1f2937;
+            position: relative;
+        }
+        .preview-box::before {
+            content: 'POST TEMPLATE';
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            background: #1e3a8a;
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-weight: bold;
+            z-index: 20;
+        }
+
+        /* アニメーション */
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 遅延表示の設定 */
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body class="bg-surface text-text font-sans antialiased selection:bg-primary selection:text-white">
+
+    <!-- Header Section -->
+    <header class="bg-primary text-white pt-20 pb-24 relative overflow-hidden">
+        <!-- Decoration circles -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 translate-x-1/3 translate-y-1/3"></div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center max-w-4xl">
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-800 text-blue-200 text-sm font-semibold mb-4 border border-blue-700">
+                Phase: Limited Time Sale
+            </span>
+            <h1 class="text-3xl md:text-5xl font-black leading-tight mb-6">
+                I. 期間限定セール系<br>
+                <span class="text-blue-200 text-2xl md:text-3xl font-bold mt-2 block">（セール実施時）</span>
+            </h1>
+            <p class="text-blue-100 text-lg md:text-xl font-medium">
+                値上げ後の<span class="text-white border-b-2 border-accent">「再チャンス」</span>を作り、買い逃した層を<span class="text-white border-b-2 border-accent">「回収」</span>する黄金パターン
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container mx-auto px-4 md:px-6 -mt-16 pb-20 relative z-20">
+        
+        <!-- Usage Scene Card (Intro) -->
+        <section class="bg-white rounded-2xl shadow-card p-8 mb-12 max-w-4xl mx-auto border-t-4 border-accent fade-in-up">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fa-solid fa-list-check text-accent mr-3"></i>
+                【使用シーン】
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-primary mt-1 mr-3 text-sm"></i>
+                        <span class="text-gray-700 font-medium">値上げ後に再度購入チャンスを作りたい時</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-primary mt-1 mr-3 text-sm"></i>
+                        <span class="text-gray-700 font-medium">前回買い逃した人を<span class="marker-yellow">拾いたい時</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-primary mt-1 mr-3 text-sm"></i>
+                        <span class="text-gray-700 font-medium">期間限定で特別価格を提供したい時</span>
+                    </li>
+                </ul>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-primary mt-1 mr-3 text-sm"></i>
+                        <span class="text-gray-700 font-medium">セール終了までのカウントダウンをしたい時</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-primary mt-1 mr-3 text-sm"></i>
+                        <span class="text-gray-700 font-medium">「最後のチャンス」を<span class="marker-yellow">演出したい時</span></span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Template Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+            <!-- I-1 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-100 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">I-1</span>
+                        セール予告型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+ちょっとお知らせがあります。
+
+実は…
+
+〇日間限定でセールやります🥺
+
+詳細は明日発表するので
+楽しみにしててね🔥
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            セールを予告して期待感を作る。
+                            「〇日間限定」で希少性を出す。 <span class="marker-yellow">詳細は後日にして待機させる。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- I-2 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-100 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">I-2</span>
+                        セール予告・理由付き型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+明日からセール開始します。
+
+「値上げ前に買えばよかった…」
+
+って声がずっと届いてたので、
+今回だけ特別に🥺
+
+最初で最後のチャンスかも。
+
+明日の投稿、見逃さないでね🔥
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            セールの理由を伝えて納得感を出す。
+                            「今回だけ特別」で希少性を強調。 <span class="marker-yellow">「最初で最後かも」で緊急性を作る。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- I-3 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-200 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">I-3</span>
+                        セール開始・価格発表型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+お待たせしました。
+
+【〇日間限定セール開始】
+
+通常価格：〇,〇〇〇円
+↓
+セール価格：〇,〇〇〇円
+
+これが最後のチャンスかもしれません🥺
+
+（リンク）
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            セール開始をシンプルに告知。
+                            通常価格との差でお得感を出す。
+                            <span class="marker-yellow">「最後のチャンスかも」で即決を促す。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- I-4 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-200 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">I-4</span>
+                        セール開始・理由説明型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+なんでセールやるのか。
+
+正直に言います。
+
+「値上げ後に知って買えなかった」
+って人が多すぎたから🥺
+
+あの時届けられなかった人に、
+もう一度届けたい。
+
+それだけです🔥
+
+（リンク）
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            セールの理由を感情込めて伝える。
+                            「届けたい」という想いで共感を得る。
+                            <span class="marker-yellow">売り込み感を薄めて好印象を作る。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- I-5 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-300 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">I-5</span>
+                        セール内容まとめ型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+このセールで手に入るもの👇
+
+・〇〇で〇〇作り放題
+・外注費0円で作り放題
+・〇大特典全部つき
+・LINEサポート
+・アップデート永久無料
+
+これがセール価格で手に入る。
+
+〇日間限定です🔥
+
+（リンク）
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            セールで手に入るものを整理して見せる。
+                            改めて価値を確認させる。 <span class="marker-yellow">期間限定を強調。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- I-6 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-300 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">I-6</span>
+                        セール中・売れてる報告型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+セール開始から〇時間。
+
+もう〇〇人が手に取ってくれました🥺
+
+やっぱり待ってた人いたんだ…
+
+嬉しすぎる😭
+
+まだの人、あと〇日だよ🔥
+
+（リンク）
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            セール中の売れ行きを報告。
+                            「待ってた人がいた」で需要を示す。 <span class="marker-yellow">残り日数で緊急性を作る。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- I-7 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-100 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">I-7</span>
+                        セール中・購入者の声型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+セール中に買ってくれた人から早速報告🥺
+
+「ずっと欲しかったので嬉しい！」
+「今度こそ逃しませんでした！」
+
+この声が聞きたかった😭
+
+迷ってる人、このチャンス逃さないで🔥
+
+（リンク）
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            購入者の喜びの声を共有。
+                            「今度こそ逃さない」で前回買い逃した人に刺さる。
+                            <span class="marker-yellow">迷ってる人の背中を押す。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- I-8 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-100 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">I-8</span>
+                        セール中・よくある質問型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+よく聞かれる質問。Q. 初回限定の時と内容違う？A. 同じ！むしろアップデートで増えてます🥺Q. また値下げする？A. 正直わかりません。今回が最後かも。Q. 今買うべき？A. 迷ってるなら今です🔥
+
+（リンク）
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            よくある疑問に答えて不安を解消。 「アプデで増えてる」で今買う価値を示す。 <span class="marker-yellow">「今回が最後かも」で緊急性を作る。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- I-9 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-200 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">I-9</span>
+                        前回買い逃した人へ型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+前回買い逃した人へ。
+
+「あの時買っておけば…」
+
+って後悔したよね？🥺
+
+同じ後悔、またする？
+
+今回逃したら次はないかもよ🔥
+
+（リンク）
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            前回の後悔を思い出させる。 「また同じ後悔する？」と問いかける。 <span class="marker-yellow">「次はない」で今回の重要性を強調。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- I-10 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-200 flex flex-col h-full">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded mr-2">I-10</span>
+                        セール中・購入者数報告型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6">
+購入者〇〇〇人突破してます。
+
+これだけの人が
+「〇〇作りたい」と思ってる。
+
+みんな始めてるよ🥺
+
+見てるだけでいいの？🔥
+
+（リンク）
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-5 border border-blue-100">
+                        <h4 class="text-primary font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            具体的な数字で社会的証明。 「みんな始めてる」で取り残される不安を刺激。 <span class="marker-yellow">「見てるだけでいいの？」で行動を促す。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+             <!-- I-11 -->
+             <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-300 flex flex-col h-full border-2 border-accent/20">
+                <div class="p-6 border-b border-gray-100 bg-yellow-50">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-accent text-white text-xs px-2 py-1 rounded mr-2">I-11</span>
+                        セール残り3日型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6 border-l-accent">
+セール終了まであと3日。
+
+通常価格：〇,〇〇〇円
+↓
+セール価格：〇,〇〇〇円
+
+この価格で買えるのは
+あと3日だけです🥺
+
+（リンク）
+                    </div>
+                    <div class="bg-yellow-50 rounded-lg p-5 border border-yellow-100">
+                        <h4 class="text-accent font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            残り日数を明示してカウントダウン開始。 価格差を再度見せてお得感を強調。 <span class="marker-yellow">シンプルに緊急性を伝える。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- I-12 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-300 flex flex-col h-full border-2 border-accent/20">
+                <div class="p-6 border-b border-gray-100 bg-yellow-50">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-accent text-white text-xs px-2 py-1 rounded mr-2">I-12</span>
+                        セール残り2日型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6 border-l-accent">
+あと2日。
+
+「まだ大丈夫」って思ってない？
+
+その油断が前回の後悔を生んだんだよ🥺
+
+同じ失敗、繰り返さないで🔥
+
+（リンク）
+                    </div>
+                    <div class="bg-yellow-50 rounded-lg p-5 border border-yellow-100">
+                        <h4 class="text-accent font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            油断を突いて行動を促す。 前回の後悔を再度思い出させる。 <span class="marker-yellow">「同じ失敗」というワードで刺す。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- I-13 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-100 flex flex-col h-full border-2 border-accent/20">
+                <div class="p-6 border-b border-gray-100 bg-yellow-50">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-accent text-white text-xs px-2 py-1 rounded mr-2">I-13</span>
+                        セール残り1日型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6 border-l-accent">
+明日でセール終了します。
+
+今回がラストチャンス。
+
+次いつやるかわからないし、
+もうやらないかもしれない🥺
+
+決断するなら今日です🔥
+
+（リンク）
+                    </div>
+                    <div class="bg-yellow-50 rounded-lg p-5 border border-yellow-100">
+                        <h4 class="text-accent font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            「明日で終了」で強い緊急性。 「もうやらないかも」で希少性を強調。 <span class="marker-yellow">今日中の決断を促す。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- I-14 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-100 flex flex-col h-full border-2 border-red-100">
+                <div class="p-6 border-b border-gray-100 bg-red-50">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-red-500 text-white text-xs px-2 py-1 rounded mr-2">I-14</span>
+                        セール最終日・朝型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6 border-l-red-500">
+【本日23:59でセール終了】
+
+起きたらセール終わってた…
+ってならないでね🥺
+
+今日中に決断してください🔥
+
+（リンク）
+                    </div>
+                    <div class="bg-red-50 rounded-lg p-5 border border-red-100">
+                        <h4 class="text-red-600 font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            最終日の朝に告知。 「起きたら終わってた」で危機感を与える。 <span class="marker-yellow">早めの決断を促す。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- I-15 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-200 flex flex-col h-full border-2 border-red-100">
+                <div class="p-6 border-b border-gray-100 bg-red-50">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-red-500 text-white text-xs px-2 py-1 rounded mr-2">I-15</span>
+                        セール最終日・昼型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6 border-l-red-500">
+あと12時間。
+
+セール価格で買える最後の半日。
+
+迷ってる時間がもったいないよ🥺
+
+やるなら今🔥
+
+（リンク）
+                    </div>
+                    <div class="bg-red-50 rounded-lg p-5 border border-red-100">
+                        <h4 class="text-red-600 font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            残り時間を具体的に示す。 「迷ってる時間がもったいない」で行動を促す。 <span class="marker-yellow">シンプルに背中を押す。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- I-16 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-200 flex flex-col h-full border-2 border-red-100">
+                <div class="p-6 border-b border-gray-100 bg-red-50">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-red-500 text-white text-xs px-2 py-1 rounded mr-2">I-16</span>
+                        セール最終日・夕方型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6 border-l-red-500">
+あと6時間。
+
+「明日でいいや」は通用しません。今日の23:59で終了。
+
+後悔しない選択をしてね🥺
+
+（リンク）
+                    </div>
+                    <div class="bg-red-50 rounded-lg p-5 border border-red-100">
+                        <h4 class="text-red-600 font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            「明日でいいや」を潰す。 終了時刻を明確に伝える。 <span class="marker-yellow">「後悔しない選択」で締める。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- I-17 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-300 flex flex-col h-full border-2 border-red-100">
+                <div class="p-6 border-b border-gray-100 bg-red-50">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-red-500 text-white text-xs px-2 py-1 rounded mr-2">I-17</span>
+                        セール最終日・夜型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6 border-l-red-500">
+あと3時間。
+
+これが最後の案内になるかも。
+
+・外注費〇〜〇万が0円
+・〇〇知識ゼロでOK
+・一度覚えれば一生使える
+
+この価格で手に入る最後のチャンス🔥
+
+（リンク）
+                    </div>
+                    <div class="bg-red-50 rounded-lg p-5 border border-red-100">
+                        <h4 class="text-red-600 font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            残り3時間で最終追い込み。 価値を再度整理して見せる。 <span class="marker-yellow">「最後のチャンス」で決断を促す。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- I-18 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-300 flex flex-col h-full border-2 border-red-100">
+                <div class="p-6 border-b border-gray-100 bg-red-50">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-red-500 text-white text-xs px-2 py-1 rounded mr-2">I-18</span>
+                        セール最終日・ラスト1時間型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6 border-l-red-500">
+あと1時間。
+
+ここまで見てるってことは気になってるよね？🥺
+
+その直感、信じていいと思う。
+
+ラスト1時間。決断して🔥
+
+（リンク）
+                    </div>
+                    <div class="bg-red-50 rounded-lg p-5 border border-red-100">
+                        <h4 class="text-red-600 font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            「気になってる」という心理を言語化。 「直感を信じて」で背中を押す。 <span class="marker-yellow">残り1時間で最後の一押し。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- I-19 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-300 flex flex-col h-full border-2 border-red-100">
+                <div class="p-6 border-b border-gray-100 bg-red-50">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-red-500 text-white text-xs px-2 py-1 rounded mr-2">I-19</span>
+                        セール最終日・ラスト30分型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow bg-gray-50">
+                    <div class="preview-box shadow-sm mb-6 border-l-red-500">
+あと30分。
+
+最後の最後。
+
+この投稿見てる人、
+今すぐ決めて🥺
+
+（リンク）
+                    </div>
+                    <div class="bg-red-50 rounded-lg p-5 border border-red-100">
+                        <h4 class="text-red-600 font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            「最後の最後」で緊急性を最大化。 シンプルに「今すぐ決めて」と促す。 <span class="marker-yellow">余計な説明は不要。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- I-20 -->
+            <article class="bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden fade-in-up delay-100 flex flex-col h-full bg-gray-50">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center mb-1">
+                        <span class="bg-gray-500 text-white text-xs px-2 py-1 rounded mr-2">I-20</span>
+                        セール終了型
+                    </h3>
+                </div>
+                <div class="p-6 flex-grow">
+                    <div class="preview-box shadow-sm mb-6 border-l-gray-500">
+セール終了しました。
+
+駆け込みで買ってくれた皆さん、
+ありがとうございます😭
+
+通常価格に戻りましたが、
+内容・特典・サポートは変わりません🥺
+
+次のセールは…未定です🔥
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-5 border border-gray-200">
+                        <h4 class="text-gray-600 font-bold text-sm mb-2 flex items-center">
+                            <i class="fa-regular fa-lightbulb mr-2"></i>【意図・役割】
+                        </h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            セール終了を報告。 購入者への感謝を伝える。 <span class="marker-yellow">「次は未定」で今後の期待感も残す。</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold text-white mb-4">Content Strategy Templates</h2>
+            <p class="mb-8 text-gray-400">最後のチャンスで、迷っている人を確実に回収する。</p>
+            <div class="text-sm text-gray-500">
+                © Sale Campaign Patterns. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script for Copy Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const boxes = document.querySelectorAll('.preview-box');
+            
+            boxes.forEach(box => {
+                // Create Copy Button
+                const btn = document.createElement('button');
+                btn.className = 'absolute top-2 right-2 bg-white text-primary border border-primary/20 hover:bg-blue-50 hover:border-primary px-3 py-1 rounded-md text-xs font-bold shadow-sm transition-all duration-200 flex items-center gap-1 z-10 cursor-pointer';
+                btn.innerHTML = '<i class="fa-regular fa-copy"></i> コピー';
+                
+                // Add click event
+                btn.addEventListener('click', () => {
+                    // Clone box to remove button text from copied content
+                    const clone = box.cloneNode(true);
+                    const btnInClone = clone.querySelector('button');
+                    if(btnInClone) btnInClone.remove();
+                    
+                    const textToCopy = clone.innerText.trim();
+                    
+                    // Copy execution
+                    const textArea = document.createElement("textarea");
+                    textArea.value = textToCopy;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    
+                    try {
+                        document.execCommand('copy');
+                        
+                        // Success Feedback
+                        const originalContent = btn.innerHTML;
+                        btn.innerHTML = '<i class="fa-solid fa-check text-green-500"></i> 完了!';
+                        btn.classList.add('border-green-500', 'text-green-600');
+                        
+                        setTimeout(() => {
+                            btn.innerHTML = originalContent;
+                            btn.classList.remove('border-green-500', 'text-green-600');
+                        }, 2000);
+                        
+                    } catch (err) {
+                        console.error('Copy failed', err);
+                        alert('コピーに失敗しました');
+                    }
+                    
+                    document.body.removeChild(textArea);
+                });
+                
+                box.appendChild(btn);
+            });
+        });
+    </script>
+
+</body>
+</html>
